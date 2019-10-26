@@ -1,0 +1,20 @@
+ion-toolbar {
+    --background: rgb(151, 9, 128);
+    text-align: center;
+    color: white;
+}
+
+ion-input {
+    border-bottom: 1px solid rgb(151, 9, 128);
+    margin-bottom: -9.5px;
+}
+
+ion-button {
+    --background: rgb(151, 9, 128);
+}
+
+.error-message {
+    font-size: 0.8em;
+    color: red;
+    text-align: center;
+}

@@ -1,0 +1,79 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref=`{{defaulturl}}`></ion-back-button>
+        </ion-buttons>
+        <ion-title>Add Movie</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+    <form [formGroup]="movieForm">
+        <ion-item>
+            <ion-label>Movie Category</ion-label>
+            <ion-select formControlName="cate">
+                <ion-select-option value="English Movies">English Movies</ion-select-option>
+                <ion-select-option value="Pakistani Movies">Pakistani Movies</ion-select-option>
+                <ion-select-option value="Indians Movies">Indians Movies</ion-select-option>
+                <ion-select-option value="Punjabi Movies">Punjabi Movies </ion-select-option>
+            </ion-select>
+        </ion-item>
+        <ion-item>
+            <ion-input formControlName="name" type="text" placeholder="Movie Name"></ion-input>
+        </ion-item>
+        <div class="error-message">
+            <ng-container *ngFor="let error of error_message.name">
+                <div class="error-message" *ngIf="movieForm.get('name').hasError(error.type) && (movieForm.get('name').dirty || movieForm.get('name').touched)">
+                    {{ error.message }}
+                </div>
+            </ng-container>
+        </div>
+
+
+        <ion-item>
+            <ion-input formControlName="discription" type="textarea" placeholder="Movie discription"></ion-input>
+        </ion-item>
+        <div class="error-message">
+            <ng-container *ngFor="let error of error_message.description">
+                <div class="error-message" *ngIf="movieForm.get('name').hasError(error.type) && (movieForm.get('name').dirty || movieForm.get('name').touched)">
+                    {{ error.message }}
+                </div>
+            </ng-container>
+        </div>
+
+        <ion-item>
+            <ion-input formControlName="country" type="text" placeholder="Movie Country"></ion-input>
+        </ion-item>
+        <!-- <div class="error-message">
+            <ng-container *ngFor="let error of error_message">
+                <div class="error-message" *ngIf="movieForm.get('country').hasError(error.type) && (movieForm.get('country').dirty || movieForm.get('country').touched)">
+                    {{ error.message }}
+                </div>
+            </ng-container>
+        </div> -->
+
+        <ion-item>
+            <ion-input formControlName="genre" type="text" placeholder="Movie Genre"></ion-input>
+        </ion-item>
+        <!-- <div class="error-message">
+            <ng-container *ngFor="let error of error_message">
+                <div class="error-message" *ngIf="movieForm.get('genre').hasError(error.type) && (movieForm.get('genre').dirty || movieForm.get('genre').touched)">
+                    {{ error.message }}
+                </div>
+            </ng-container>
+        </div> -->
+
+        <ion-item>
+            <ion-input formControlName="stars" type="text" placeholder="Movie Stars"></ion-input>
+        </ion-item>
+        <!-- <div class="error-message">
+            <ng-container *ngFor="let error of error_message">
+                <div class="error-message" *ngIf="movieForm.get('stars').hasError(error.type) && (movieForm.get('stars').dirty || movieForm.get('stars').touched)">
+                    {{ error.message }}
+                </div>
+            </ng-container>
+        </div> -->
+
+        <ion-button (click)="onSubmit()" [disabled]="!movieForm.valid" class="ion-padding" shape="round" size="default" expand="block">Submit</ion-button>
+    </form>
+</ion-content>

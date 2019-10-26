@@ -1,0 +1,24 @@
+<ion-header>
+    <ion-toolbar class="toolbar">
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="/home"></ion-back-button>
+        </ion-buttons>
+        <ion-title> {{currentCategory}} </ion-title>
+        <ion-icon slot="end" [routerLink]="['/add-movie']" class="larger" name="add"></ion-icon>
+    </ion-toolbar>
+    <ion-searchbar [(ngModel)]="searchTerm" (ionChange)="setFilteredItems()"></ion-searchbar>
+</ion-header>
+
+<ion-content>
+    <ion-card *ngFor="let item of moviesList">
+
+        <ion-item expand="block" (click)="changeUrl(item)">
+            <ion-avatar slot="start">
+                <img src="img.jpg" />
+            </ion-avatar>
+            <ion-card-content>
+                <ion-label>{{ item?.name }} </ion-label>
+            </ion-card-content>
+        </ion-item>
+    </ion-card>
+</ion-content>

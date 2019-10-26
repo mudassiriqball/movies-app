@@ -1,0 +1,29 @@
+<ion-header>
+    <ion-toolbar class="toolbar">
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title>
+            Home
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+<ion-tab-bar>
+    <ion-tab-button (click)="changeUrl(moviesCategory[0])">English</ion-tab-button>
+    <ion-tab-button (click)="changeUrl(moviesCategory[1])">Pakistani</ion-tab-button>
+    <ion-tab-button (click)="changeUrl(moviesCategory[2])">Indians</ion-tab-button>
+    <ion-tab-button (click)="changeUrl(moviesCategory[3])">Punjabi</ion-tab-button>
+</ion-tab-bar>
+<ion-content padding>
+    <ion-searchbar [(ngModel)]="searchTerm" (ionChange)="setFilteredItems()"></ion-searchbar>
+    <ion-card *ngFor="let item of moviesList">
+        <ion-item expand="block" [routerLink]="['/movies-detail']">
+            <ion-avatar slot="start">
+                <img src="img.jpg" />
+            </ion-avatar>
+            <ion-card-content>
+                <ion-label>{{ item?.name }} </ion-label>
+            </ion-card-content>
+        </ion-item>
+    </ion-card>
+</ion-content>

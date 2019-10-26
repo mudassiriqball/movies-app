@@ -1,0 +1,30 @@
+.toolbar {
+    // --background: transparent;
+    // --background: linear-gradient(90deg, rgba(10, 10, 10, 0.733) 0%, rgba(0, 0, 0, 0.733) 25%, rgba(0, 0, 0, 0.733) 75%, rgba(0, 0, 0, 0.733) 100%);
+    --background: rgb(151, 9, 128);
+    --color: white;
+}
+
+span {
+    font-size: 16px;
+    color: black;
+    font-weight: bold;
+}
+
+ion-content {
+    --background: rgb(255, 255, 255);
+}
+
+ion-card {
+    padding: 5px;
+    border: 2px solid rgb(151, 9, 128);
+}
+
+ion-card-subtitle {
+    color: rgb(29, 27, 27);
+}
+
+.larger {
+    font-size: 24px;
+    margin-right: 15px;
+}

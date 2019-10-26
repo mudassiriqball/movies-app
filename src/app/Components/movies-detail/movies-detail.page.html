@@ -1,0 +1,25 @@
+<ion-header>
+    <ion-toolbar class="toolbar">
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref=`{{defaulturl}}></ion-back-button>
+        </ion-buttons>
+        <ion-title> {{currentMovie.name}} </ion-title>
+        <ion-icon slot="end" (click)="deleteMovie()" class="larger" ios="ios-trash" md="md-trash"></ion-icon>
+
+    </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+    <ion-card>
+        <img src="img.jpg" />
+        <ion-card-header>
+            <ion-card-subtitle style="font-weight: bolder;font-size: 30px;color: rgb(0, 0, 0);">{{currentMovie.name}}</ion-card-subtitle>
+            <ion-card-subtitle>{{ currentMovie.discription }}</ion-card-subtitle>
+            <ion-card-subtitle><span>Countary:</span> {{ currentMovie.country }}</ion-card-subtitle>
+            <ion-card-subtitle><span>Genre:</span> {{ currentMovie.genre }}</ion-card-subtitle>
+            <ion-card-subtitle><span>Stars:</span> {{ currentMovie.stars }}</ion-card-subtitle>
+
+        </ion-card-header>
+        <ion-card-content> </ion-card-content>
+    </ion-card>
+</ion-content>
